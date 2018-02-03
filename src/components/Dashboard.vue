@@ -60,7 +60,7 @@ export default {
     }
   },
   created () {
-    db.collection('employees').get()
+    db.collection('employees').orderBy('dept').get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
           const data = {
