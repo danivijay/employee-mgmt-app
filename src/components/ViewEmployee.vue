@@ -4,9 +4,28 @@
       <v-flex xs12 sm8 md6 offset-sm2 offset-md3>
 
         <v-card>
-          <v-card-title>
-            <h2>{{ employee.employee_id }}. {{ employee.name }}</h2>
-          </v-card-title>
+          <v-toolbar color="white" class="mt-2 elevation-0">
+            <v-toolbar-title>{{ employee.employee_id }}. {{ employee.name }}</v-toolbar-title>
+            <v-btn
+              :to="{
+                name: 'edit-employee',
+                params: {
+                  employee_id: employee.employee_id
+                }
+              }"
+              color="pink"
+              dark
+              small
+              absolute
+              bottom
+              right
+              fab
+            >
+              <v-icon>edit</v-icon>
+            </v-btn>
+          </v-toolbar>
+
+          <v-divider></v-divider>
 
           <v-card-text>
             Department: <b>{{ employee.dept }}</b>
